@@ -1,20 +1,22 @@
 const myLibrary = [];
 
-let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read");
+let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+let harryPotter = new Book("Harry Potter", "J. K. Rowling", 989, false);
+let fantasticBeasts = new Book("Fantastic Beasts", "J. K. Rowling", 563, false);
 
-console.log(theHobbit.info());
+myLibrary.push(theHobbit, harryPotter, fantasticBeasts);
+
+for (let i = 0; i < myLibrary.length; i++) {
+    console.log(myLibrary[i]);
+}
 
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-
-    this.info = () => {
-        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read} yet`;
-    }
 }
 
 function addBookToLibrary() {
-    
+
 }
