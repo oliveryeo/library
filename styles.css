@@ -14,7 +14,7 @@ html, body, .container {
     display: grid;
     /* Need position relative to do z-indexing */
     position: relative;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 100px 120px 1fr 40px;
 }
 
 .header {
@@ -40,8 +40,27 @@ html, body, .container {
     justify-self: end;
 }
 
-.table {
+.add-book {
+    display: flex;
     position: relative;
     z-index: 1;
     background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-book > button {
+    height: 3rem;
+    width: 10rem;
+    font-size: 1.5rem;
+}
+
+.table {
+
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
