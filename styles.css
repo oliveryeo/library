@@ -56,11 +56,33 @@ html, body, .container {
 }
 
 .table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    grid-template-rows: repeat(auto-fit, 350px);
+    justify-content: center;
+    background-color: whitesmoke;
+}
 
+.card {
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5rem;
 }
 
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: beige;
 }
