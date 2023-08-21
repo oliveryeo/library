@@ -89,20 +89,20 @@ html, body, .container {
     border-radius: 10px;
 }
 
-.card-content > div:nth-child(4) {
+.card-content > .read {
     background-color: rgb(241 161 159);
 }
 
-.card-content > div:nth-child(4):hover {
+.card-content > .read:hover {
     background-color: rgb(238, 143, 142);
     cursor: pointer;
 }
 
-.card-content > div:nth-child(5) {
+.card-content > .remove {
     background-color: rgb(234, 232, 232);
 }
 
-.card-content > div:nth-child(5):hover {
+.card-content > .remove:hover {
     background-color: rgb(210, 207, 207);
     cursor: pointer;
 }
