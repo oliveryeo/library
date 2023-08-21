@@ -93,8 +93,18 @@ html, body, .container {
     background-color: rgb(241 161 159);
 }
 
+.card-content > div:nth-child(4):hover {
+    background-color: rgb(238, 143, 142);
+    cursor: pointer;
+}
+
 .card-content > div:nth-child(5) {
     background-color: rgb(234, 232, 232);
+}
+
+.card-content > div:nth-child(5):hover {
+    background-color: rgb(210, 207, 207);
+    cursor: pointer;
 }
 
 .footer {
