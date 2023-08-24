@@ -89,12 +89,21 @@ html, body, .container {
     border-radius: 10px;
 }
 
-.card-content > .read {
+.card-content > .not-read {
     background-color: rgb(241 161 159);
 }
 
-.card-content > .read:hover {
+.card-content > .read {
+    background-color: lightgreen;
+}
+
+.card-content > .not-read:hover {
     background-color: rgb(238, 143, 142);
+    cursor: pointer;
+}
+
+.card-content > .read:hover {
+    background-color: rgb(123, 207, 123);
     cursor: pointer;
 }
 

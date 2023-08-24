@@ -35,7 +35,6 @@ function addBookToLibrary(Book, index) {
     bookTitle.classList.add("title");
     bookAuthor.classList.add("author");
     bookPages.classList.add("pages");
-    bookRead.classList.add("read");
     removeCard.classList.add("remove");
 
     // Add necessary content to each element
@@ -43,17 +42,34 @@ function addBookToLibrary(Book, index) {
     bookAuthor.textContent = Book.author;
     bookPages.textContent = Book.pages + " Pages";
     removeCard.textContent = "Remove";
+
+    // TODO -- If book is read, change background to green, if not read, change to red
+    // TODO -- Book read must be able to be clickable
     if (Book.read === true) {
         bookRead.textContent = "Read";
+        bookRead.classList.add("read");
     } else {
         bookRead.textContent = "Not read";
+        bookRead.classList.add("not-read");
     }
 
     // Add removecard function to removeCard button
     removeCard.addEventListener("mouseup", () => {
         delete myLibrary[index];
-        card.remove();
+        card.remove(); // somehow this is unique to the card created in this instance!
     });
+
+    bookRead.addEventListener("mouseup", () => {
+        if (bookRead.classList.contains("read")) {
+            bookRead.classList.add("not-read");
+            bookRead.classList.remove("read");
+            bookRead.textContent = "Not read";
+        } else {
+            bookRead.classList.add("read");
+            bookRead.classList.remove("not-read");
+            bookRead.textContent = "Read";
+        }
+    })
 
     // Append the elements as children in the correct order
     let cardContents = [bookTitle, bookAuthor, bookPages, bookRead, removeCard];
