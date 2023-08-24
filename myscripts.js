@@ -8,8 +8,6 @@ myLibrary.push(theHobbit, percyJackson);
 
 // TODO -- Add event listener for add book submission, then add the book, and reset the book display
 
-// TODO -- Add listen event for remove book card, and run the function to remove book card, and reset the book display
-
 initiateDisplay();
 
 
@@ -33,7 +31,6 @@ function addBookToLibrary(Book, index) {
 
     // Set necessary classes and data-attributes to the elements
     card.classList.add("card");
-    card.dataset.index = index; // this line is important for the card removal process → identifies which index is it in the library array
     cardContent.classList.add("card-content");
     bookTitle.classList.add("title");
     bookAuthor.classList.add("author");
