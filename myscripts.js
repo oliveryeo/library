@@ -1,18 +1,19 @@
 const myLibrary = [];
 
 // Create example books
-let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 1020, false);
+let percyJackson = new Book("Percy Jackson", "Rick Riordan", 871, false);
 
-myLibrary.push(theHobbit);
+myLibrary.push(theHobbit, percyJackson);
 
-// for (let i = 0; i < myLibrary.length; i++) {
-//     console.log(myLibrary[i]);
-// }
+// TODO -- Add event listener for add book submission, then add the book, and reset the book display
 
-// Testing if the code works
-addBookToLibrary(theHobbit);
+// TODO -- Add listen event for remove book card, and run the function to remove book card, and reset the book display
+
+initiateDisplay();
 
 
+// FUNCTIONS ------------------------------------------------------------
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -20,7 +21,7 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary(Book) {
+function addBookToLibrary(Book, index) {
     const table = document.querySelector(".table");
     const card = document.createElement("div");
     const cardContent = document.createElement("div");
@@ -30,7 +31,9 @@ function addBookToLibrary(Book) {
     const bookRead = document.createElement("div");
     const removeCard = document.createElement("div");
 
+    // Set necessary classes and data-attributes to the elements
     card.classList.add("card");
+    card.dataset.index = index; // this line is important for the card removal process → identifies which index is it in the library array
     cardContent.classList.add("card-content");
     bookTitle.classList.add("title");
     bookAuthor.classList.add("author");
@@ -38,23 +41,34 @@ function addBookToLibrary(Book) {
     bookRead.classList.add("read");
     removeCard.classList.add("remove");
 
+    // Add necessary content to each element
     bookTitle.textContent = Book.title;
     bookAuthor.textContent = Book.author;
     bookPages.textContent = Book.pages + " Pages";
     removeCard.textContent = "Remove";
-
     if (Book.read === true) {
         bookRead.textContent = "Read";
     } else {
         bookRead.textContent = "Not read";
     }
 
-    let cardContents = [bookTitle, bookAuthor, bookPages, bookRead, removeCard];
+    // Add removecard function to removeCard button
+    removeCard.addEventListener("mouseup", () => {
+        delete myLibrary[index];
+        card.remove();
+    });
 
+    // Append the elements as children in the correct order
+    let cardContents = [bookTitle, bookAuthor, bookPages, bookRead, removeCard];
     table.appendChild(card);
     card.appendChild(cardContent);
-    
     for (let i = 0; i < cardContents.length; i++) {
         cardContent.appendChild(cardContents[i]);
+    }
+}
+
+function initiateDisplay() {
+    for (let i = 0; i < myLibrary.length; i++) {
+        addBookToLibrary(myLibrary[i], i);
     }
 }
