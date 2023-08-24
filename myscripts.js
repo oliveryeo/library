@@ -1,15 +1,15 @@
 const myLibrary = [];
 
 // Create example books
+let harryPotter = new Book("Harry Potter", "J. K. Rowling", 1523, false);
 let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 1020, false);
 let percyJackson = new Book("Percy Jackson", "Rick Riordan", 871, false);
 
-myLibrary.push(theHobbit, percyJackson);
+myLibrary.push(harryPotter, theHobbit, percyJackson);
 
 // TODO -- Add event listener for add book submission, then add the book, and reset the book display
 
 initiateDisplay();
-
 
 // FUNCTIONS ------------------------------------------------------------
 function Book(title, author, pages, read) {
