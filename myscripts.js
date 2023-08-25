@@ -1,13 +1,28 @@
 const myLibrary = [];
 
 // TODO -- Working on showing the form to add books
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 const showButton = document.getElementById("showDialog");
 const addBookDialog = document.getElementById("add-book-dialog");
 const outputBox = document.querySelector("output");
+const confirmBtn = addBookDialog.querySelector("#confirmBtn");
 
 showButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
+
+addBookDialog.addEventListener("close", (e) => {
+  outputBox.value = 
+    addBookDialog.returnValue === "default"
+      ? "No return value."
+      : `ReturnValue: ${addBookDialog.returnValue}.`;
+})
+
+confirmBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  addBookDialog.close();
+})
+
 
 // Create example books
 let harryPotter = new Book("Harry Potter", "J. K. Rowling", 1523, false);
