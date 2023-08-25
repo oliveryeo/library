@@ -1,5 +1,14 @@
 const myLibrary = [];
 
+// TODO -- Working on showing the form to add books
+const showButton = document.getElementById("showDialog");
+const addBookDialog = document.getElementById("add-book-dialog");
+const outputBox = document.querySelector("output");
+
+showButton.addEventListener("click", () => {
+  addBookDialog.showModal();
+});
+
 // Create example books
 let harryPotter = new Book("Harry Potter", "J. K. Rowling", 1523, false);
 let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 1020, false);
