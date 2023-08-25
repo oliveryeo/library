@@ -1,41 +1,38 @@
 const myLibrary = [];
 
-// TODO -- Working on showing the form to add books
+//// TODO -- Working on showing the form to add books
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 const showButton = document.getElementById("showDialog");
 const addBookDialog = document.getElementById("add-book-dialog");
 const outputBox = document.querySelector("output");
 const confirmBtn = addBookDialog.querySelector("#confirmBtn");
 
+//
 showButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
 
-addBookDialog.addEventListener("close", (e) => {
-  outputBox.value = 
-    addBookDialog.returnValue === "default"
-      ? "No return value."
-      : `ReturnValue: ${addBookDialog.returnValue}.`;
-})
-
+// Prevent confirm button from submitting a form
 confirmBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addBookDialog.close();
 })
 
 
-// Create example books
+//// Create example books
 let harryPotter = new Book("Harry Potter", "J. K. Rowling", 1523, false);
 let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 1020, false);
 let percyJackson = new Book("Percy Jackson", "Rick Riordan", 871, false);
 
 myLibrary.push(harryPotter, theHobbit, percyJackson);
 
-// TODO -- Add event listener for add book submission, then add the book, and reset the book display
+//// TODO -- Add event listener for add book submission, then add the book, and reset the book display
 
+
+//// Initiate display for example books
 initiateDisplay();
 
-// FUNCTIONS ------------------------------------------------------------
+//// FUNCTIONS -------------------------------------------------------------------
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
