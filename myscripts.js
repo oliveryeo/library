@@ -43,7 +43,7 @@ addBookForm.addEventListener("submit", (e) => {
   function resetForm() {
     bookTitle.value = "";
     bookAuthor.value = "";
-    bookPages.value = 0;
+    bookPages.value = "";
     bookReadCheck.checked = false;
   }
 
