@@ -4,20 +4,52 @@ const myLibrary = [];
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 const showButton = document.getElementById("showDialog");
 const addBookDialog = document.getElementById("add-book-dialog");
+const addBookForm = document.getElementById("add-book-form");
+const bookTitle = document.getElementById("title");
+const bookAuthor = document.getElementById("author");
+const bookPages = document.getElementById("pages");
+const bookReadCheck = document.getElementById("read-check");
 const outputBox = document.querySelector("output");
+const cancelBtn = addBookDialog.querySelector("#cancelBtn");;
 const confirmBtn = addBookDialog.querySelector("#confirmBtn");
 
-//
+// Show the dialogue
 showButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
 
-// Prevent confirm button from submitting a form
-confirmBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+// Close the dialogue if cancelled
+cancelBtn.addEventListener("click", () => {
   addBookDialog.close();
 })
 
+// Prevent the form from actually submitting something, and close the dialog instead. Then create a new book -> add into myLibrary array -> refresh display
+addBookForm.addEventListener("submit", (e) => {
+  // Stop the form from submitting and close dialog
+  e.preventDefault();
+  addBookDialog.close();
+
+  // Create a new book and add to array
+  let newBook = new Book(
+    bookTitle.value,
+    bookAuthor.value,
+    bookPages.value,
+    bookReadCheck.checked
+  );
+  myLibrary.push(newBook);
+  
+  // Reset the form
+  resetForm();
+  function resetForm() {
+    bookTitle.value = "";
+    bookAuthor.value = "";
+    bookPages.value = 0;
+    bookReadCheck.checked = false;
+  }
+
+  // Refresh book cards display
+  initiateDisplay();
+});
 
 //// Create example books
 let harryPotter = new Book("Harry Potter", "J. K. Rowling", 1523, false);
@@ -25,9 +57,6 @@ let theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 1020, false);
 let percyJackson = new Book("Percy Jackson", "Rick Riordan", 871, false);
 
 myLibrary.push(harryPotter, theHobbit, percyJackson);
-
-//// TODO -- Add event listener for add book submission, then add the book, and reset the book display
-
 
 //// Initiate display for example books
 initiateDisplay();
@@ -38,6 +67,19 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+}
+
+function initiateDisplay() {
+  // Remove all cards
+  allCards = document.querySelectorAll(".card");
+  allCards.forEach(card => {
+    card.remove();
+  })
+
+  // Create new cards based on array
+  for (let i = 0; i < myLibrary.length; i++) {
+    addBookToLibrary(myLibrary[i], i);
+  }
 }
 
 function addBookToLibrary(Book, index) {
@@ -98,11 +140,5 @@ function addBookToLibrary(Book, index) {
   card.appendChild(cardContent);
   for (let i = 0; i < cardContents.length; i++) {
     cardContent.appendChild(cardContents[i]);
-  }
-}
-
-function initiateDisplay() {
-  for (let i = 0; i < myLibrary.length; i++) {
-    addBookToLibrary(myLibrary[i], i);
   }
 }
