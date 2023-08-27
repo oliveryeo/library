@@ -18,7 +18,8 @@ showButton.addEventListener("click", () => {
 });
 
 // Close the dialogue if cancelled
-cancelBtn.addEventListener("click", () => {
+cancelBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   addBookDialog.close();
 })
 
