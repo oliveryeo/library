@@ -9,7 +9,6 @@ const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
 const bookPages = document.getElementById("pages");
 const bookReadCheck = document.getElementById("read-check");
-const outputBox = document.querySelector("output");
 const cancelBtn = addBookDialog.querySelector("#cancelBtn");;
 const confirmBtn = addBookDialog.querySelector("#confirmBtn");
 
