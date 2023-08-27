@@ -117,6 +117,60 @@ body,
   cursor: pointer;
 }
 
+dialog {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  margin-left: auto; /* margin-left and -right: auto helps to center horizontally */
+  margin-right: auto;
+  top: 20%;
+  border-radius: 10px;
+}
+
+.form-title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#add-book-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  font-size: 1.5rem;
+}
+
+#add-book-form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#add-book-form > .submission-buttons,
+#add-book-form > .read-input {
+  flex-direction: row;
+}
+
+#add-book-form input {
+  border-radius: 5px;
+  border-width: 1.5px;
+  width: 200px;
+  height: 25px;
+}
+
+#add-book-form > .read-input > input {
+  width: 25px;
+}
+
+#add-book-form button {
+  height: 30px;
+  width: 100px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 .footer {
   display: flex;
   justify-content: center;

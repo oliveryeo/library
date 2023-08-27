@@ -103,7 +103,7 @@ function addBookToLibrary(Book, index) {
   // Add necessary content to each element
   bookTitle.textContent = Book.title;
   bookAuthor.textContent = Book.author;
-  bookPages.textContent = Book.pages + " Pages";
+  bookPages.textContent = "Pages: " + Book.pages;
   removeCard.textContent = "Remove";
 
   // TODO -- If book is read, change background to green, if not read, change to red
