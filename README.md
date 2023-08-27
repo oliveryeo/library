@@ -1,7 +1,7 @@
 # library
 Welcome to my TOP Library Javascript Project! This layout is inspired by michalosman's TOP Library project.
 
-## <u>How to use?<u>
+## <u>📗 How to use?<u>
 - There are three example book cards already loaded into the library once the website is loaded. 
 - Adding a new book:
   - Select "+ Add book" to add a new book card into the library display.
@@ -11,3 +11,6 @@ Welcome to my TOP Library Javascript Project! This layout is inspired by michalo
 - Modifying the book card's read status or removal
   - Press on the read status button to change to "Not read" or "Read".
   - To remove the card, just select the "Remove" button of the book card.
+
+## <u>🚧 WIP<u>
+- The log-in function and backend data storage is still in progress as I have not reached that portion in the course yet. Do keep a lookout for future updates!
