@@ -17,7 +17,7 @@ showButton.addEventListener("click", () => {
   addBookDialog.showModal();
 });
 
-// Close the dialogue if cancelled
+// Close the dialogue if cancelled, prevent form submission when cancelled
 cancelBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addBookDialog.close();
