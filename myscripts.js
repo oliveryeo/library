@@ -61,6 +61,7 @@ myLibrary.push(harryPotter, theHobbit, percyJackson);
 initiateDisplay();
 
 //// FUNCTIONS -------------------------------------------------------------------
+// Class prototype to instantiate a book object
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -68,6 +69,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+// Initiate the display for the book library
 function initiateDisplay() {
   // Remove all cards
   allCards = document.querySelectorAll(".card");
@@ -81,6 +83,7 @@ function initiateDisplay() {
   }
 }
 
+// Adds a book to the library with the respective eventlistener's required for book card modifications
 function addBookToLibrary(Book, index) {
   const table = document.querySelector(".table");
   const card = document.createElement("div");
