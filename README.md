@@ -1,6 +1,8 @@
 # library
 Welcome to my TOP Library Javascript Project! This layout is inspired by michalosman's TOP Library project.
 
+Liveview: https://oliveryeo.github.io/library/
+
 ## <u>📗 How to use?<u>
 - There are three example book cards already loaded into the library once the website is loaded. 
 - Adding a new book:
