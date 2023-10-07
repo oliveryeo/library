@@ -1,6 +1,5 @@
 const myLibrary = [];
 
-//// TODO -- Working on showing the form to add books
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 const showButton = document.getElementById("showDialog");
 const addBookDialog = document.getElementById("add-book-dialog");
@@ -109,8 +108,8 @@ function addBookToLibrary(Book, index) {
   bookPages.textContent = "Pages: " + Book.pages;
   removeCard.textContent = "Remove";
 
-  // TODO -- If book is read, change background to green, if not read, change to red
-  // TODO -- Book read must be able to be clickable
+  // If book is read, change background to green, if not read, change to red
+  // Book read must be able to be clickable
   if (Book.read === true) {
     bookRead.textContent = "Read";
     bookRead.classList.add("read");
@@ -121,7 +120,7 @@ function addBookToLibrary(Book, index) {
 
   // Add removecard function to removeCard button
   removeCard.addEventListener("mouseup", () => {
-    delete myLibrary[index];
+    myLibrary.splice(index, 1);
     card.remove(); // somehow this is unique to the card created in this instance!
   });
 
