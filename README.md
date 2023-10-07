@@ -1,6 +1,11 @@
 # library
 Welcome to my TOP Library Javascript Project! This layout is inspired by michalosman's TOP Library project.
 
+Liveview: https://oliveryeo.github.io/library/
+
+# Goal of the project
+- To demonstrate the use of forms, modal and javascript cross-interactivity to create library cards.
+
 ## <u>📗 How to use?<u>
 - There are three example book cards already loaded into the library once the website is loaded. 
 - Adding a new book:
