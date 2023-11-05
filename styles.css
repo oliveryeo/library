@@ -16,7 +16,7 @@ body,
   display: grid;
   /* Need position relative to do z-indexing */
   position: relative;
-  grid-template-rows: 100px 120px 1fr 40px;
+  grid-template-rows: 100px 80px 1fr 40px;
 }
 
 .header {
@@ -78,7 +78,8 @@ body,
   display: flex;
   flex: 1; /* Helps to stretch the whole card */
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 1rem;
+  padding-bottom: 3.5px;
   font-size: 1.5rem;
 }
 
