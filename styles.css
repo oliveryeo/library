@@ -63,6 +63,7 @@ body,
   grid-template-rows: repeat(auto-fit, 350px);
   justify-content: center;
   background-color: whitesmoke;
+  overflow: auto;
 }
 
 .card {

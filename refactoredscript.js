@@ -21,7 +21,6 @@ class Library {
 }
 
 myLibrary = new Library();
-myLibrary.addBook("Harry Potter", "J. K. Rowling", 1523, false);
 
 class ScreenController {
   static {
