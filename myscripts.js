@@ -121,7 +121,7 @@ function addBookToLibrary(Book, index) {
   // Add removecard function to removeCard button
   removeCard.addEventListener("mouseup", () => {
     myLibrary.splice(index, 1);
-    card.remove(); // somehow this is unique to the card created in this instance!
+    initiateDisplay(); // refresh the display to accurately display the books in the database
   });
 
   bookRead.addEventListener("mouseup", () => {
