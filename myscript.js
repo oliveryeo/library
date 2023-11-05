@@ -72,7 +72,7 @@ function Book(title, author, pages, read) {
 // Initiate the display for the book library
 function initiateDisplay() {
   // Remove all cards
-  allCards = document.querySelectorAll(".card");
+  const allCards = document.querySelectorAll(".card");
   allCards.forEach((card) => {
     card.remove();
   });
