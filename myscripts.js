@@ -8,7 +8,7 @@ const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
 const bookPages = document.getElementById("pages");
 const bookReadCheck = document.getElementById("read-check");
-const cancelBtn = addBookDialog.querySelector("#cancelBtn");;
+const cancelBtn = addBookDialog.querySelector("#cancelBtn");
 const confirmBtn = addBookDialog.querySelector("#confirmBtn");
 
 // Show the dialogue
@@ -20,7 +20,7 @@ showButton.addEventListener("click", () => {
 cancelBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addBookDialog.close();
-})
+});
 
 // Prevent the form from actually submitting something, and close the dialog instead. Then create a new book -> add into myLibrary array -> refresh display
 addBookForm.addEventListener("submit", (e) => {
@@ -36,7 +36,7 @@ addBookForm.addEventListener("submit", (e) => {
     bookReadCheck.checked
   );
   myLibrary.push(newBook);
-  
+
   // Reset the form
   resetForm();
   function resetForm() {
@@ -73,9 +73,9 @@ function Book(title, author, pages, read) {
 function initiateDisplay() {
   // Remove all cards
   allCards = document.querySelectorAll(".card");
-  allCards.forEach(card => {
+  allCards.forEach((card) => {
     card.remove();
-  })
+  });
 
   // Create new cards based on array
   for (let i = 0; i < myLibrary.length; i++) {
